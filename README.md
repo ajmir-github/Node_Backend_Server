@@ -11,6 +11,19 @@ Use NPM to install its depedencies.
 npm install
 ```
 
+Initiate the database using
+
+```bash
+npm run config
+```
+
+You can run the server using
+
+```bash
+npm start
+```
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
