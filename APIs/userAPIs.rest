@@ -1,0 +1,56 @@
+### GET ALL USERS
+GET http://localhost:4000/user
+
+### GET A SINGEL USER
+GET http://localhost:4000/user/61c2b9a88ae5c23b1b28f3c7
+
+### CREATE A USER
+POST http://localhost:4000/user
+Content-Type: application/json
+
+{
+ "username":"mohibb",
+ "password":"xxx",
+ "fullName":"Mohib Osmani",
+ "title":"Graphic Designer",
+ "email":"mohib@gmail.com",
+ "phone":"+93-723-546-987"
+}
+
+
+### UPDATE A USER
+PATCH  http://localhost:4000/user/61c49682e6e513d6167bd6e5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJyb2xlIjoxLCJpYXQiOjE2NDAxNTI2Mzd9.2J_EOKg1FXBaXBsetA2VfF7q23kx3tAk7VWmXGULdiQ
+Content-Type: application/json
+
+{
+  "role":2
+}
+
+### DELETE A USER
+DELETE http://localhost:4000/user/61c2bad77f4a325078c50ea9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJyb2xlIjoxLCJpYXQiOjE2NDAyNzQ2MzF9.dONJYM9dZrrTjp6Bqot3k4PDqp-KD69xJqTsQ_9Hkxs
+
+### UPLOAD PROFILE PHOTO
+POST http://localhost:4000/user/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaGliIiwicm9sZSI6MCwiaWF0IjoxNjQwMjc1MDcxfQ.iFt0ejAOgc8hIN8P2-spQFLhnmEBwEYM6aVq0JKMlB8
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="girl.jpg"
+Content-Type: image/png
+
+< ./files/ajmir.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+### Follow AND UNFOLLOW A USER
+POST  http://localhost:4000/user/follow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJyb2xlIjoxLCJpYXQiOjE2NDAzMjI4NTB9.ue0b37bmvMUbppgCxGvdz4s9EnO11kaGycTrxawanZU
+Content-Type: application/json
+
+{
+  "follow":true,
+  "userId":"61c2ba727f4a325078c50ea3"
+}

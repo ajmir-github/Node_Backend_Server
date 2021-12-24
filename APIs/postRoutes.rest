@@ -1,0 +1,63 @@
+### GET ALL POSTS
+GET http://localhost:4000/post
+### GET SOME POSTS
+GET http://localhost:4000/post
+  ?limit=2
+  &skip=2
+### GET SOME Fields
+GET http://localhost:4000/post
+  ?include=title date -_id
+  &sort=-1
+### GET SEARCH
+GET http://localhost:4000/post
+  ?search=ec
+### GET SINGLE POST
+GET http://localhost:4000/post/61c54e1eb837c5f1393033e3
+
+### CREATE A POST
+POST http://localhost:4000/post
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaGliIiwicm9sZSI6MCwiaWF0IjoxNjQwMzIyMTQ1fQ.x03f11uAZNgxlYsIrdafw1zFy99cOh2UaNkN9XBvY4I
+
+{
+  "title":"Why where houses!",
+  "keywords":"house, teach",
+  "body":"In this course, I am going to teach you what you need to know in order to build your dream projects sooner."
+}
+
+### UPDATE A POST
+PATCH  http://localhost:4000/post/61c54e1eb837c5f1393033e3
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJyb2xlIjoxLCJpYXQiOjE2NDAzMjI0Mjl9.1ijmXNMAS0PqNdV57BTRVdvV2qvPIuR3-_UNH5L_Ux0
+
+{
+  "title":"ECMA SCRIPT",
+  "body":"We have never learned what we had to. We must practice a lot"
+}
+
+### DELETE A POST
+DELETE   http://localhost:4000/post/61c4a38b2849c3fb11c53930
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhbWl6Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE2MzkyMDIyMzF9.bG_sMsJiS64Ern05DQQdeH_gFKhU34ncfJMaevpe_Eg
+
+### UPLOAD POST IMAGE
+POST http://localhost:4000/post/upload/61c54e1eb837c5f1393033e3
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJyb2xlIjoxLCJpYXQiOjE2NDAzMjI0Mjl9.1ijmXNMAS0PqNdV57BTRVdvV2qvPIuR3-_UNH5L_Ux0
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="4.jpg"
+Content-Type: image/png
+
+< ./files/4.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+### MAKE A COMMENT
+POST  http://localhost:4000/post/comment/61c54e1eb837c5f1393033e3
+Content-Type: application/json
+
+{
+  "author":"Moqbil Alizada",
+  "email":"a_moqbil@gmail.com",
+  "body":"I think you must leave AFG."
+}

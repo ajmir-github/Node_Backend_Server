@@ -1,0 +1,13 @@
+{
+ "username":"root",
+ "password":"1234",
+ "fullName":"Ajmir Raziqi",
+ "title":"Software Engineer",
+ "email":"ajmir.ng3@gmail.com",
+ "phone":"+93-771-210-549",
+ "image":{
+  "lgImg":"root.jpg",
+  "smImg":"root.min.jpg"
+ },
+ "role":1
+}
